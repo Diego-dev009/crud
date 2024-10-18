@@ -1,7 +1,7 @@
 import React from 'react'
 import './UserTable.css';
 
-const UserTable = () => {
+const UserTable = props => {
     return (
         <table>
             <thead>
