@@ -5,31 +5,29 @@ import { useState } from 'react';
 function App() {
 
   const usersData = [
-    { id: 1 , name:"Denis", userName: "delta"  },
-    { id: 2 , name:"essenia", userName: "kaguya"},
-    { id: 3 , name:"Bryan", userName: "Bryan1"},
-    { id: 4 , name:"Elmer", userName: "Elmer1"},
-    { id: 5 , name:"Ricardo", userName: "Ricardo1"},
-    { id: 6 , name:"Lineth", userName: "Lineth"}
-
+    { id: 1, name: "Elmer", userName: "Elmer1"},
+    { id: 2, name: "Bryan", userName: "Brayabn1"},
+    { id: 3, name: "Andres", userName: "Andres1"},
+    { id: 4, name: "Gustavo", userName: "Gustavo1"}
   ];
 
-  const deleteuser = id =>{
-    setUsers (users.filter(users => users.id !== id))
-  }
+  const deleteUser = id => {
+    setUsers(users.filter(user => user.id !== id))
+  };
 
-  const initialFormState = { id: null , name:"", userName: ""};
+  const initialFormState = { id: null, name: "", userName: ""};
 
-  const [users, setUsers] = useState( usersData );
+  const [users, setUsers] = useState(usersData);
 
   const [currentUser, setCurrentUser] = useState(initialFormState); 
+
   return (
     <div>
       <h1>CRUD DE USUARIOS</h1>
       <UserTable 
-       users = {users}
+        users={users}
+        deleteUser={deleteUser}
       />
-
     </div>
   );
 }
